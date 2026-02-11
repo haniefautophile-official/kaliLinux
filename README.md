@@ -14,7 +14,7 @@ exit
 ```
 ### or use Single Command
 ```
-apt update && apt install git -y && pkg install mpv && git clone  https://github.com/haniefautophile-official/KaliLinux.git && cd jarvis-welcome && chmod +x * && ./install.sh
+apt update && apt install git -y && pkg install mpv && git clone  https://github.com/haniefautophile-official/KaliLinux.git && cd KaliLinux && chmod +x * && ./install.sh
 ```
 ## [+]How to remove 
 ```
