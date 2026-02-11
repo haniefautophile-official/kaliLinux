@@ -6,19 +6,19 @@
 apt update
 apt install git -y
 pkg install mpv -y
-git clone https://github.com/AmshenShanu07/jarvis-welcome.git
-cd jarvis-welcome
+git clone https://github.com/haniefautophile-official/KaliLinux.git
+cd KaliLinux
 chmod +x *
 sh install.sh
 exit
 ```
 ### or use Single Command
 ```
-apt update && apt install git -y && pkg install mpv && git clone  https://github.com/AmshenShanu07/jarvis-welcome.git && cd jarvis-welcome && chmod +x * && ./install.sh
+apt update && apt install git -y && pkg install mpv && git clone  https://github.com/haniefautophile-official/KaliLinux.git && cd jarvis-welcome && chmod +x * && ./install.sh
 ```
 ## [+]How to remove 
 ```
-cd jarvis-welcome
+cd KaliLinux
 
 bash rvt.sh
 ```
@@ -27,6 +27,5 @@ bash rvt.sh
 
     
 ## [+] Find Me on :
-#### Telegram :https://t.me/AmshenShanu
-#### Plzz text your errors to this grp :https://t.me/joinchat/NM1A0FN8Bu-swiQNFRhdgw
+#### Whatsapp :089524564686
 
