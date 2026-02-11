@@ -1,31 +1,10 @@
-# jarvis-welcome 
-#### Beautify your Termux App With a warm welcome
+# KaliLinux Termux Style
 
-## [+] Installation & Usage
-```
-apt update
-apt install git -y
-pkg install mpv -y
-git clone https://github.com/haniefautophile-official/KaliLinux.git
+🔥 Kali Linux terminal style for Termux  
+🎵 With login music (one-time play)
+
+## Install
+```bash
+git clone https://github.com/haniefautophile-official/KaliLinux
 cd KaliLinux
-chmod +x *
-sh install.sh
-exit
-```
-### or use Single Command
-```
-apt update && apt upgrade -y && apt install git -y && pkg install mpv && git clone  https://github.com/haniefautophile-official/KaliLinux.git && cd KaliLinux && chmod +x * && ./install.sh
-```
-## [+]How to remove 
-```
-cd KaliLinux
-
-bash rvt.sh
-```
-# thanks to https://github.com/htr-tech 
- # For providing the code
-
-    
-## [+] Find Me on :
-#### Whatsapp :089524564686
-
+bash install.sh
