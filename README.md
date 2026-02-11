@@ -5,6 +5,4 @@
 
 ## Install
 ```bash
-git clone https://github.com/haniefautophile-official/KaliLinux
-cd KaliLinux
-bash install.sh
+apt update && apt upgrade -y && git clone https://github.com/haniefautophile-official/KaliLinux && cd KaliLinux && bash install.sh
