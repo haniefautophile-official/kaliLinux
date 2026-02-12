@@ -16,17 +16,17 @@ if command -v mpv >/dev/null 2>&1 && [ -f "$MUSIC" ]; then
 fi
 
 # ===============================
-# LOADING BAR ANIMATION
+# LOADING BAR 29 SECONDS (FIXED)
 # ===============================
 loading_bar() {
-    echo -ne "\e[1;96mInitializing KaliLinux Environment\e[0m\n"
-    echo -ne "\e[1;92m["
-    for i in {1..30}; do
-        echo -ne "■"
-        sleep 0.03
+    echo -e "\e[1;96mInitializing KaliLinux Environment\e[0m"
+    for i in $(seq 1 100); do
+        printf "\r\e[1;92mLoading: [%-50s] %3d%%\e[0m" \
+        "$(printf '■%.0s' $(seq 1 $((i/2))))" "$i"
+        sleep 0.29
     done
-    echo -e "] \e[1;92mDONE\e[0m"
-    sleep 0.3
+    echo -e "\n\e[1;92mSystem Ready ✔\e[0m"
+    sleep 0.5
 }
 
 # ===============================
