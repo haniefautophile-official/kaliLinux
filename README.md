@@ -5,4 +5,9 @@
 
 ## Install
 ```bash
-apt update && apt upgrade -y && pkg install git -y && git clone https://github.com/haniefautophile-official/KaliLinux && cd KaliLinux && bash install.sh
+apt update && apt upgrade -y && pkg install git -y && git clone https://github.com/haniefautophile-official/KaliLinux && cd KaliLinux && chmod +x update.sh && bash install.sh
+```
+### Update
+```bash
+bash update.sh
+```
