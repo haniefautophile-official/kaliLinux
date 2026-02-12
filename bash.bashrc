@@ -16,17 +16,31 @@ if command -v mpv >/dev/null 2>&1 && [ -f "$MUSIC" ]; then
 fi
 
 # ===============================
-# LOADING BAR 29 SECONDS (FIXED)
+# HACKER STYLE LOADING (29 SECONDS)
 # ===============================
 loading_bar() {
-    echo -e "\e[1;96mInitializing KaliLinux Environment\e[0m"
-    for i in $(seq 1 100); do
-        printf "\r\e[1;92mLoading: [%-50s] %3d%%\e[0m" \
-        "$(printf '■%.0s' $(seq 1 $((i/2))))" "$i"
-        sleep 0.29
+    local steps=100
+    local delay=0.29
+    local msgs=(
+        "Initializing kernel modules"
+        "Mounting virtual filesystem"
+        "Loading security policies"
+        "Starting network services"
+        "Injecting environment variables"
+        "Decrypting system cache"
+        "Establishing secure shell"
+        "Finalizing KaliLinux environment"
+    )
+
+    echo -e "\e[1;92m[+] Boot sequence started...\e[0m"
+    for i in $(seq 1 $steps); do
+        msg=${msgs[$RANDOM % ${#msgs[@]}]}
+        printf "\r\e[1;96m%-45s\e[0m \e[1;92m[%3d%%]\e[0m" "$msg" "$i"
+        sleep $delay
     done
-    echo -e "\n\e[1;92mSystem Ready ✔\e[0m"
-    sleep 0.5
+
+    echo -e "\n\e[1;92m[✓] System initialized successfully\e[0m"
+    sleep 0.4
 }
 
 # ===============================
@@ -34,7 +48,7 @@ loading_bar() {
 # ===============================
 spinner() {
     spin='|/-\'
-    echo -ne "\e[1;95mBooting System \e[0m"
+    echo -ne "\e[1;95mLaunching shell \e[0m"
     for i in {1..20}; do
         printf "\b${spin:i%4:1}"
         sleep 0.07
