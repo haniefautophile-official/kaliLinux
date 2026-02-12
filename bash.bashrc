@@ -6,14 +6,17 @@ xx
 
 clear
 
-# ---- PLAY MUSIC ONCE ----
-MUSIC_FLAG="$HOME/.welcome_music_played"
-MUSIC_FILE="$HOME/KaliLinux/welcome.mp3"
+# ===============================
+# WELCOME MUSIC (EVERY SESSION)
+# ===============================
 
-if [ -f "$MUSIC_FILE" ] && [ ! -f "$MUSIC_FLAG" ]; then
-    mpv --no-video --quiet "$MUSIC_FILE" >/dev/null 2>&1 &
-    touch "$MUSIC_FLAG"
+MUSIC="$HOME/KaliLinux/welcome.mp3"
+
+if command -v mpv >/dev/null 2>&1 && [ -f "$MUSIC" ]; then
+    sleep 1
+    (mpv --no-video --volume=70 "$MUSIC" >/dev/null 2>&1 &)
 fi
+
 
 # ---- ASCII WELCOME ----
 echo -e "\e[1;92m"
