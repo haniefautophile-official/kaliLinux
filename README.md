@@ -5,4 +5,4 @@
 
 ## Install
 ```bash
-apt update && apt upgrade -y && pkg install mpv && pkg install git -y && git clone https://github.com/haniefautophile-official/KaliLinux && cd KaliLinux && bash install.sh
+apt update && apt upgrade -y && pkg install git -y && git clone https://github.com/haniefautophile-official/KaliLinux && cd KaliLinux && bash install.sh
