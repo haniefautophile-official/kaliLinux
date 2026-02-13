@@ -16,32 +16,41 @@ if command -v mpv >/dev/null 2>&1 && [ -f "$MUSIC" ]; then
 fi
 
 # ===============================
-# HACKER STYLE LOADING (29 SECONDS)
+# HACKER PROGRESS LOADING (29s)
 # ===============================
 loading_bar() {
     local steps=100
     local delay=0.29
-    local msgs=(
-        "Initializing kernel modules"
-        "Mounting virtual filesystem"
-        "Loading security policies"
-        "Starting network services"
-        "Injecting environment variables"
-        "Decrypting system cache"
-        "Establishing secure shell"
-        "Finalizing KaliLinux environment"
-    )
+    local bar=""
+    local colors=("\e[1;91m" "\e[1;93m" "\e[1;92m" "\e[1;96m" "\e[1;94m" "\e[1;95m")
+    local W="\e[0m"
 
-    echo -e "\e[1;92m[+] Boot sequence started...\e[0m"
+    echo -e "\e[1;92m[+] Booting KaliLinux Environment...\e[0m"
+
     for i in $(seq 1 $steps); do
-        msg=${msgs[$RANDOM % ${#msgs[@]}]}
-        printf "\r\e[1;96m%-45s\e[0m \e[1;92m[%3d%%]\e[0m" "$msg" "$i"
+        bar+="■"
+        color=${colors[$((i % 6))]}
+
+        printf "\r${color}Progress: [%-50s] %3d%%${W}" "$bar" "$i"
+
+        # Beep checkpoint
+        case $i in
+            25|50|75|100)
+                printf "\a"
+                ;;
+        esac
+
         sleep $delay
     done
 
-    echo -e "\n\e[1;92m[✓] System initialized successfully\e[0m"
+    echo
+    echo -e "\e[1;92mSystem Ready ✔\e[0m"
     sleep 0.4
 }
+
+loading_bar
+clear
+
 
 # ===============================
 # SPINNER ANIMATION
