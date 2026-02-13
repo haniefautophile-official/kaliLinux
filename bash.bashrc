@@ -11,12 +11,11 @@ clear
 MUSIC="$HOME/KaliLinux/welcome.mp3"
 
 if command -v mpv >/dev/null 2>&1 && [ -f "$MUSIC" ]; then
-    sleep 1
     (mpv --no-video --volume=70 "$MUSIC" >/dev/null 2>&1 &)
 fi
 
 # ===============================
-# HACKER PROGRESS LOADING (29s)
+# HACKER PROGRESS LOADING (±29s)
 # ===============================
 loading_bar() {
     local steps=100
@@ -33,11 +32,8 @@ loading_bar() {
 
         printf "\r${color}Progress: [%-50s] %3d%%${W}" "$bar" "$i"
 
-        # Beep checkpoint
         case $i in
-            25|50|75|100)
-                printf "\a"
-                ;;
+            25|50|75|100) printf "\a" ;;
         esac
 
         sleep $delay
@@ -45,29 +41,11 @@ loading_bar() {
 
     echo
     echo -e "\e[1;92mSystem Ready ✔\e[0m"
-    sleep 0.4
-}
-
-loading_bar
-clear
-
-
-# ===============================
-# SPINNER ANIMATION
-# ===============================
-spinner() {
-    spin='|/-\'
-    echo -ne "\e[1;95mLaunching shell \e[0m"
-    for i in {1..20}; do
-        printf "\b${spin:i%4:1}"
-        sleep 0.07
-    done
-    echo -e " \e[1;92m✔\e[0m"
     sleep 0.3
 }
 
+# === RUN LOADING ONCE ===
 loading_bar
-spinner
 clear
 
 # ===============================
