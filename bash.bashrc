@@ -19,7 +19,7 @@ fi
 # ===============================
 loading_bar() {
     local steps=100
-    local delay=0.29
+    local delay=0.10
     local bar=""
     local colors=("\e[1;91m" "\e[1;93m" "\e[1;92m" "\e[1;96m" "\e[1;94m" "\e[1;95m")
     local W="\e[0m"
